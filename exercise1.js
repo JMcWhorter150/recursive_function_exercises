@@ -68,20 +68,18 @@ function contains(obj, search) {
                 return true;
             } else if (typeof obj[key] === 'object' || Array.isArray(obj[key])) {
                 return contains(obj[key], search);
-            } else {
-                return false;
-            }
+            } 
         }
+        return false;
     } else if (Array.isArray(obj)) {
         for (let item of obj) {
             if (search === item) {
                 return true;
             } else if (typeof item === 'object' || Array.isArray(item)) {
                 return contains(item, search);
-            } else {
-                return false;
             }
         }
+        return false;
     }
 }
 
